@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Z-City Controls & Medical Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d0a0a 100%);
+            padding: 20px;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #1a1a1a;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(255,0,0,0.3);
+            overflow: hidden;
+            border: 1px solid #ff2424;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #1a1a1a 0%, #8f1515 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-bottom: 2px solid #ff2424;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            background: #2a2a2a;
+            border-left: 4px solid #ff2424;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(255,0,0,0.2);
+        }
+        
+        .section h2 {
+            color: #ff2424;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #444;
+        }
+        
+        .section h3 {
+            color: #ff4444;
+            font-size: 1.3em;
+            margin: 15px 0 10px 0;
+        }
+        
+        .command-line, .control-line, .item-line {
+            padding: 8px 0;
+            border-bottom: 1px solid #333;
+        }
+        
+        .command-line:last-child, .control-line:last-child, .item-line:last-child {
+            border-bottom: none;
+        }
+        
+        .command {
+            display: inline-block;
+            background: #ff2424;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            margin-right: 10px;
+            min-width: 180px;
+        }
+        
+        .key {
+            display: inline-block;
+            background: #8f1515;
+            color: white;
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-right: 10px;
+            min-width: 80px;
+            text-align: center;
+        }
+        
+        .item-name {
+            font-weight: bold;
+            color: #ff4444;
+        }
+        
+        .description {
+            color: #b0b0b0;
+            font-style: italic;
+        }
+        
+        .note {
+            background: #3a2a1a;
+            border-left: 4px solid #ff8800;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+            color: #e0e0e0;
+        }
+        
+        .medkit-box {
+            background: #1a2a1a;
+            border: 2px solid #00ff00;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        
+        .medkit-box h3 {
+            color: #00ff00;
+            margin-top: 0;
+        }
+        
+        .medkit-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .medkit-box li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+            color: #e0e0e0;
+        }
+        
+        .medkit-box li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #00ff00;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Z-City Controls & Medical Guide</h1>
+            <p>the great z-city guide by great people and great influences</p>
+        </div>
+        
+        <div class="content">
+            <!-- commands and binds -->
+            <div class="section">
+                <h2>Bindable Commands</h2>
+                <div class="command-line">
+                    <span class="key">fake</span>
+                    <span class="description">Ragdoll</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">+alt1</span>
+                    <span class="description">Lean left</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">+alt2</span>
+                    <span class="description">Lean right</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">+altlook</span>
+                    <span class="description">Free look</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">+hmcd_holdbreath</span>
+                    <span class="description">Hold breath (for weapon accuracy)</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hmcd_togglelaser</span>
+                    <span class="description">Toggle weapon laser</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">suicide</span>
+                    <span class="description">Point gun at yourself</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_dropflashlight</span>
+                    <span class="description">Drop flashlight</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_dropsling</span>
+                    <span class="description">Drop sling</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_dropkastet</span>
+                    <span class="description">Drop brass knuckles</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_ammomenu</span>
+                    <span class="description">Open ammo menu</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_weaponsettings</span>
+                    <span class="description">Edit weapon position</span>
+                </div>
+                <div class="command-line">
+                    <span class="key">hg_inspect</span>
+                    <span class="description">Inspect items/weapons and check ammo</span>
+                </div>
+            </div>
+
+            <!-- controls -->
+            <div class="section">
+                <h2>Controls</h2>
+                
+                <h3>Hands</h3>
+                <div class="control-line">
+                    <span class="key">Hold Neck + R</span>
+                    <span class="description">View pulse on a body</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">RMB + LMB</span>
+                    <span class="description">Perform CPR on a body</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">E + LMB</span>
+                    <span class="description">Loot/search a body</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">LMB / R</span>
+                    <span class="description">Raise/lower fists</span>
+                </div>
+                
+                <h3>Ragdoll Mode</h3>
+                <div class="control-line">
+                    <span class="key">RMB</span>
+                    <span class="description">Right hand</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">LMB</span>
+                    <span class="description">Left hand</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">ALT</span>
+                    <span class="description">Grab with right hand</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">SHIFT</span>
+                    <span class="description">Grab with left hand</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">W / S</span>
+                    <span class="description">Move forward/backward</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">A / D</span>
+                    <span class="description">Roll left/right</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">E</span>
+                    <span class="description">Stabilize position (allows proper weapon use)</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">fake</span>
+                    <span class="description">Exit ragdoll mode</span>
+                </div>
+                
+                <h3>Weapons</h3>
+                <div class="control-line">
+                    <span class="key">Hold R</span>
+                    <span class="description">Check magazine</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">E (while aiming)</span>
+                    <span class="description">Switch sights (multi-sight scopes)</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">SCROLL</span>
+                    <span class="description">Change zoom (variable scopes)</span>
+                </div>
+                
+                <h3>Miscellaneous</h3>
+                <div class="control-line">
+                    <span class="key">C + E</span>
+                    <span class="description">Enable night vision goggles</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">Q</span>
+                    <span class="description">Show interaction menu</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">F1</span>
+                    <span class="description">Spawn menu (sandbox mode)</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">fake (2x)</span>
+                    <span class="description">Exit seat/vehicle</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">G</span>
+                    <span class="description">Drop items</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">Hold E (in seat)</span>
+                    <span class="description">Go numb</span>
+                </div>
+            </div>
+
+            <!-- med guide -->
+            <div class="section">
+                <h2>Medical Guide</h2>
+                
+                <h3>Using Medical Items</h3>
+                <div class="control-line">
+                    <span class="key">LMB</span>
+                    <span class="description">Use medical items on yourself</span>
+                </div>
+                <div class="control-line">
+                    <span class="key">RMB</span>
+                    <span class="description">Use medical items on others</span>
+                </div>
+                
+                <h3>Medical Items</h3>
+                <div class="item-line">
+                    <span class="item-name">Bandage</span> – 
+                    <span class="description">Heals bleeding</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Beta-Blocker</span> – 
+                    <span class="description">Lowers adrenaline levels</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Big Bandage</span> – 
+                    <span class="description">Heals bleeding with larger capacity</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Bloodbag</span> – 
+                    <span class="description">Blood transfusion (hold R to switch between modes; sometimes spawns empty)</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Decompression Needle</span> – 
+                    <span class="description">Heals collapsed lungs from gunshot wounds</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Epipen</span> – 
+                    <span class="description">Increases adrenaline, may restart the heart</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Fentanyl</span> – 
+                    <span class="description">Strong opioid (~300% pain reduction). Use in small doses; risk of overdose (use Naloxone). Useful for dislocations</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Mannitol</span> – 
+                    <span class="description">Heals head trauma from blunt force or gunshot wounds</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Painkillers</span> – 
+                    <span class="description">Mild opioid (~35% pain reduction). Helps with fixing dislocations</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Tranexamic Acid</span> – 
+                    <span class="description">Heals internal bleeding (MEDKIT EXCLUSIVE)</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Tourniquet</span> – 
+                    <span class="description">Reduces blood flow to a limb, minimizing bleeding</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Morphine</span> – 
+                    <span class="description">Opioid (~100% pain reduction). May wake someone from a coma (reduces unconsciousness)</span>
+                </div>
+                <div class="item-line">
+                    <span class="item-name">Naloxone</span> – 
+                    <span class="description">Reduces opioid levels. Useful for overdoses (e.g., from fentanyl)</span>
+                </div>
+                
+                <div class="medkit-box">
+                    <h3>Medkit Contents</h3>
+                    <ul>
+                        <li>Bandages</li>
+                        <li>Painkillers</li>
+                        <li>Tranexamic Acid</li>
+                        <li>Tourniquet</li>
+                        <li>Decompression Needle</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
